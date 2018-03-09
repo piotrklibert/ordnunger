@@ -2,7 +2,6 @@ defmodule Ordnunger.W do
   use GenServer
 
   def init(_) do
-    IO.inspect self()
     {:ok, 1}
   end
 

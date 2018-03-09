@@ -18,7 +18,11 @@ defmodule Ordnunger do
   static "/statics/", ""
 
   get "" do
-    render_template "index.html.eex", members: get_random_members()
+    today = Date.utc_today()
+    render_template "index.html.eex", [
+      members: get_random_members(),
+      today: today
+    ]
   end
 
   def get_random_members do

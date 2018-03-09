@@ -4,15 +4,25 @@
     <title>Ordnunger</title>
     <meta name="viewport" content="initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/statics/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <a href="/"><img src="/statics/devil.png" style="width:170px;height:170px;"></a>
-    <h3>The God of Ordnung has spoken</h3>
-    <ul>
-      <%= for member <- @members do %>
-      <li><%= member %></li>
-      <% end %>
-    </ul>
-    <div><span>It is prophesied that a new day shall bring a new order.</span></div>
+    <img src="/statics/devil.png" style="width:9%; float: left;" />
+    <div style="margin-left: 10%; padding-top: 1.5rem" class="jumbotron">
+      <h4>Suggested daily ordnung on:</h4>
+      <h3 style="margin-left: 2rem"> <%= @today %></h3>
+      <div class="list-group">
+        <%= for member <- @members do %>
+          <a class="list-group-item"><%= member %></a>
+        <% end %>
+      </div>
+      <h4 style="margin-top: 1.8rem">
+        Proudly brought to you with
+        <a href="https://github.com/elixir-lang/elixir">Elixir</a>,
+        <a href="https://github.com/hexedpackets/trot">Trot</a>
+        and put
+        <a href="https://github.com/piotrklibert/ordnunger">on Github</a>.
+      </h4>
+    </div>
   </body>
 </html>
