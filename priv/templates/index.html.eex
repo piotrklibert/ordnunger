@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ordnunger</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/statics/favicon.ico" />
+  </head>
+  <body>
+    <a href="/"><img src="/statics/devil.png" style="width:170px;height:170px;"></a>
+    <h3>The God of Ordnung has spoken</h3>
+    <ul>
+      <%= for member <- @members do %>
+      <li><%= member %></li>
+      <% end %>
+    </ul>
+    <div><span>It is prophesied that a new day shall bring a new order.</span></div>
+  </body>
+</html>
