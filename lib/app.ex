@@ -1,23 +1,18 @@
-defmodule Ordnunger.W do
+defmodule Ordnunger.Worker do
+  def start_link(), do: GenServer.start_link(__MODULE__, :ok, [])
+
   use GenServer
-
-  def init(_) do
-    {:ok, 1}
-  end
-
-  def start_link() do
-    GenServer.start_link(__MODULE__, :ok, [])
-  end
-
+  def init(_state), do: {:ok, :state}
 end
 
-defmodule OrdnungerApp do
+defmodule Ordnunger.App do
   use Application
-  import Supervisor.Spec
 
-  def start(a, _args) do
-    Supervisor.start_link([worker(Ordnunger.W, [])],
-                          [strategy: :one_for_one])
+  def start(_type, _args) do
+    import Supervisor.Spec
+    children = [
+      worker(Ordnunger.Worker, [])
+    ]
+    Supervisor.start_link(children, strategy: :one_for_one)
   end
-
 end

@@ -11,7 +11,7 @@ defmodule Ordnunger.MixProject do
 
   # Run "mix help compile.app" to learn about applications.
   def application do
-    [mod: {OrdnungerApp, []},
+    [mod: {Ordnunger.App, []},
      applications: [:trot],
      extra_applications: [:logger]]
   end
