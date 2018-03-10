@@ -1,27 +1,34 @@
 defmodule Ordnunger do
   use Trot.Router
   use Trot.Template
+
+  if Mix.env == :dev do
+    use Plug.Debugger
+  end
+
   @template_root "priv/templates/"
+
   @member_list [
-    "Sergey",
     "Jakub F.",
-    "Maciej",
-    "Magda",
+    "Maciej W.",
+    "Magda K.",
     "Piotr J.",
-    "Jarek",
-    "Jacek Sz",
+    "Jarosław G.",
+    "Jacek Sz.",
     "Piotr K.",
-    "Alexander",
+    "Alexander K.",
     "Piotr P."
   ]
 
+  @static_root "priv/static/"
   static "/statics/", ""
+
 
   get "" do
     today = Date.utc_today()
     render_template "index.html.eex", [
-      members: get_random_members(),
-      today: today
+      today: today,
+      members: get_random_members()
     ]
   end
 
