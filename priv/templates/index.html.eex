@@ -10,14 +10,21 @@
   <body>
     <img src="/statics/devil.png" style="width:9%; float: left;" />
     <div style="margin-left: 10%; padding-top: 1.5rem" class="jumbotron">
-      <h4>Suggested daily ordnung on:</h4>
+      <h4>Suggested daily ordnung for:</h4>
       <h3 style="margin-left: 2rem"> <%= @today %></h3>
+      <%= if @show_chairman do %>
+      <h4>Notes:</h4>
+      <div class="list-group">
+        <a class="list-group-item"><%= @chairman %></a>
+      </div>
+      <h4>Members:</h4>
+      <% end %>
       <div class="list-group">
         <%= for member <- @members do %>
           <a class="list-group-item"><%= member %></a>
         <% end %>
       </div>
-      <h4 style="margin-top: 1.8rem">
+      <h4 style="margin-top: 1.8rem; font-size: 0.8rem">
         Proudly brought to you with
         <a href="https://github.com/elixir-lang/elixir">Elixir</a>,
         <a href="https://github.com/hexedpackets/trot">Trot</a>

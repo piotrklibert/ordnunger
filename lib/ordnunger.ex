@@ -11,10 +11,13 @@ defmodule Ordnunger.Router do
   static "/statics/", ""
 
   get "" do
-    import Ordnunger.Members
+    alias Ordnunger.Members
+    ordnung = Members.get_for_today()
     render_template "index.html.eex", [
       today: Date.utc_today(),
-      members: get_random_members()
+      members: ordnung.members,
+      chairman: ordnung.chairman,
+      show_chairman: false
     ]
   end
 end
