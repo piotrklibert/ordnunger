@@ -4,6 +4,7 @@ Basically, I wanted to check if [Distillery](https://github.com/bitwalker/distil
 
 It is. Nice!
 
+<!-- ![screenshot](https://github.com/piotrklibert/ordnunger/blob/master/screen.png) -->
 
 ## Docker image
 
