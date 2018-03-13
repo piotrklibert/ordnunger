@@ -17,15 +17,20 @@ defmodule Ordnunger.Members do
     defstruct list: nil, seed: nil, members: nil, chairman: nil, date: nil
   end
 
-  @member_list ["Jakub F.", "Maciej W.", "Magda K.",
-                "Piotr J.", "Jarosław G.", "Jacek Sz.",
-                "Piotr K.", "Alexander K.", "Piotr P."]
+  def member_list() do
+    case System.get_env("MEMBERS") |> Code.eval_string do
+      {nil, []} ->
+        raise "ERROR: MEMBERS environment variable unset or empty"
+      {members, _} -> members
+    end
+  end
 
   def get_for_today() do
     get_for_date(Date.utc_today())
   end
 
-  def get_for_date(date, list \\ @member_list) do
+  def get_for_date(date), do: get_for_date(date, member_list())
+  def get_for_date(date, list) do
     %Ordnung{list: list, seed: Rand.seed(date), date: date}
     |> put_random_chairman()
     |> put_random_members()

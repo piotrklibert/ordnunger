@@ -50,6 +50,7 @@ release :ordnunger do
     :runtime_tools,
     :calliope,
     :neotoma,
-    :poison
+    :poison,
+    :pattern_tap
   ]
 end

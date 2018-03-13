@@ -18,7 +18,8 @@ defmodule Ordnunger.MixProject do
 
   defp deps do
     [{:trot, github: "hexedpackets/trot"},
-     {:distillery, "~> 1.5", runtime: false}]
+     {:distillery, "~> 1.5", runtime: false},
+     {:pattern_tap, github: "mgwidmann/elixir-pattern_tap"}]
     # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
   end
 end

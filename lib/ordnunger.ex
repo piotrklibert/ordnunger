@@ -3,7 +3,7 @@ defmodule Ordnunger.Router do
   use Trot.Template
   use Plug.Debugger
 
-  @static_root "priv/static/"
+  @static_root Application.app_dir(:ordnunger) |> Path.join("/priv/static/")
   @template_root "priv/templates/"
 
   # Routes:
