@@ -37,3 +37,5 @@ To start a detached container:
     docker run -d --env-file docker.env -p 4000:4000 piotrklibert/ordnunger foreground
 
 Go to `http://localhost:4000/`, the service should be running.
+
+See also [lib](/lib/)
