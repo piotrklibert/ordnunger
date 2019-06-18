@@ -18,11 +18,12 @@ defmodule Ordnunger.Members do
   end
 
   def member_list() do
-    case System.get_env("MEMBERS") |> Code.eval_string do
-      {nil, []} ->
-        raise "ERROR: MEMBERS environment variable unset or empty"
-      {members, _} -> members
-    end
+    members = case System.get_env("MEMBERS") |> Code.eval_string do
+                {nil, []} ->
+                  Logger.warn "MEMBERS environment variable unset or empty"
+                  Application.get_env(:ordnunger, :default_members)
+                {members, _} -> members
+              end
   end
 
   def get_for_today() do

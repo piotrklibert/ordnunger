@@ -2,7 +2,18 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :trot, :router, Ordnunger.Router
+config :trot, router: Ordnunger.Router
+config :ordnunger, default_members: [
+  "Jakub F.",
+  "Maciej W.",
+  "Magda K.",
+  "Piotr J.",
+  "Jarosław G.",
+  "Jacek Sz.",
+  "Piotr K.",
+  "Alexander K.",
+  "Piotr P."
+]
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
