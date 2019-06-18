@@ -3,8 +3,8 @@ defmodule Ordnunger.MixProject do
 
   def project do
     [app: :ordnunger,
-     version: "0.1.0",
-     elixir: "~> 1.6-dev",
+     version: "0.1.1",
+     elixir: "~> 1.8",
      start_permanent: Mix.env == :prod,
      deps: deps()]
   end

@@ -11,6 +11,7 @@ defmodule Ordnunger.Rand do
 end
 
 defmodule Ordnunger.Members do
+  require Logger
   alias Ordnunger.Rand
 
   defmodule Ordnung do
